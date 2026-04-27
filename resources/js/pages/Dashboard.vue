@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Head, Link, usePage } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
+import AppLayout from '@/layouts/AppLayout.vue';
+
+defineOptions({ layout: AppLayout });
 
 interface AuthUser {
     name: string;
@@ -13,31 +16,26 @@ const user = computed(() => page.props.auth.user);
 
 <template>
     <Head title="Dashboard" />
-    <main class="min-h-screen bg-base-200 p-6">
-        <div class="max-w-6xl mx-auto space-y-6">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h1 class="text-2xl font-semibold">Dashboard</h1>
-                    <p class="text-base-content/70 text-sm">
-                        Welcome back<template v-if="user">, {{ user.name }}</template>.
-                    </p>
-                </div>
-                <Link href="/settings/profile" class="btn btn-ghost btn-sm">Settings</Link>
-            </div>
+    <div class="p-6 space-y-6 max-w-6xl mx-auto">
+        <div>
+            <h1 class="text-2xl font-semibold">Dashboard</h1>
+            <p class="text-base-content/70 text-sm">
+                Welcome back<template v-if="user">, {{ user.name }}</template>.
+            </p>
+        </div>
 
-            <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-                <div v-for="i in 3" :key="i" class="card bg-base-100 shadow aspect-video">
-                    <div class="card-body items-center justify-center text-base-content/40 text-sm">
-                        Placeholder
-                    </div>
-                </div>
-            </div>
-
-            <div class="card bg-base-100 shadow min-h-64">
-                <div class="card-body items-center justify-center text-base-content/40">
-                    Main panel placeholder
+        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+            <div v-for="i in 3" :key="i" class="card bg-base-100 shadow aspect-video">
+                <div class="card-body items-center justify-center text-base-content/40 text-sm">
+                    Placeholder
                 </div>
             </div>
         </div>
-    </main>
+
+        <div class="card bg-base-100 shadow min-h-64">
+            <div class="card-body items-center justify-center text-base-content/40">
+                Main panel placeholder
+            </div>
+        </div>
+    </div>
 </template>
