@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3';
-import { useInertiaForm } from '@artisanpack-ui/vue-laravel';
+import { Head, useForm } from '@inertiajs/vue3';
 import { Button, Input } from '@artisanpack-ui/vue/form';
 
-const { form, field } = useInertiaForm({ password: '' });
+const form = useForm({ password: '' });
 
 function submit() {
     form.post('/confirm-password', {
@@ -24,7 +23,8 @@ function submit() {
 
                 <form class="flex flex-col gap-4 mt-4" @submit.prevent="submit">
                     <Input
-                        v-bind="field('password')"
+                        v-model="form.password"
+                        :error="form.errors.password"
                         label="Password"
                         type="password"
                         autocomplete="current-password"

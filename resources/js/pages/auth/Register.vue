@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
-import { useInertiaForm } from '@artisanpack-ui/vue-laravel';
+import { Head, Link, useForm } from '@inertiajs/vue3';
 import { Button, Input } from '@artisanpack-ui/vue/form';
 
-const { form, field } = useInertiaForm({
+const form = useForm({
     name: '',
     email: '',
     password: '',
@@ -25,23 +24,33 @@ function submit() {
                 <h1 class="card-title justify-center">Create an account</h1>
 
                 <form class="flex flex-col gap-4 mt-4" @submit.prevent="submit">
-                    <Input v-bind="field('name')" label="Name" autocomplete="name" autofocus required />
                     <Input
-                        v-bind="field('email')"
+                        v-model="form.name"
+                        :error="form.errors.name"
+                        label="Name"
+                        autocomplete="name"
+                        autofocus
+                        required
+                    />
+                    <Input
+                        v-model="form.email"
+                        :error="form.errors.email"
                         label="Email address"
                         type="email"
                         autocomplete="email"
                         required
                     />
                     <Input
-                        v-bind="field('password')"
+                        v-model="form.password"
+                        :error="form.errors.password"
                         label="Password"
                         type="password"
                         autocomplete="new-password"
                         required
                     />
                     <Input
-                        v-bind="field('password_confirmation')"
+                        v-model="form.password_confirmation"
+                        :error="form.errors.password_confirmation"
                         label="Confirm password"
                         type="password"
                         autocomplete="new-password"

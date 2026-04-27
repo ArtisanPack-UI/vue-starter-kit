@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
-import { useInertiaForm } from '@artisanpack-ui/vue-laravel';
+import { Head, Link, useForm } from '@inertiajs/vue3';
 import { Button, Input } from '@artisanpack-ui/vue/form';
 
 defineProps<{
     status?: string;
 }>();
 
-const { form, field } = useInertiaForm({ email: '' });
+const form = useForm({ email: '' });
 
 function submit() {
     form.post('/forgot-password');
@@ -28,7 +27,8 @@ function submit() {
 
                 <form class="flex flex-col gap-4 mt-4" @submit.prevent="submit">
                     <Input
-                        v-bind="field('email')"
+                        v-model="form.email"
+                        :error="form.errors.email"
                         label="Email address"
                         type="email"
                         autocomplete="email"

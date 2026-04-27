@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
-import { useInertiaForm } from '@artisanpack-ui/vue-laravel';
+import { Head, Link, useForm } from '@inertiajs/vue3';
 import { Button, Checkbox, Input } from '@artisanpack-ui/vue/form';
 
 defineProps<{
@@ -8,7 +7,7 @@ defineProps<{
     status?: string;
 }>();
 
-const { form, field, checkbox } = useInertiaForm({
+const form = useForm({
     email: '',
     password: '',
     remember: false,
@@ -31,7 +30,8 @@ function submit() {
 
                 <form class="flex flex-col gap-4 mt-4" @submit.prevent="submit">
                     <Input
-                        v-bind="field('email')"
+                        v-model="form.email"
+                        :error="form.errors.email"
                         label="Email address"
                         type="email"
                         autocomplete="email"
@@ -40,14 +40,15 @@ function submit() {
                     />
 
                     <Input
-                        v-bind="field('password')"
+                        v-model="form.password"
+                        :error="form.errors.password"
                         label="Password"
                         type="password"
                         autocomplete="current-password"
                         required
                     />
 
-                    <Checkbox v-bind="checkbox('remember')" label="Remember me" />
+                    <Checkbox v-model="form.remember" label="Remember me" />
 
                     <div class="flex items-center justify-between mt-2">
                         <Link
