@@ -2,6 +2,9 @@
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import { Button, Checkbox, Input } from '@artisanpack-ui/vue/form';
 import AuthLayout from '@/layouts/AuthLayout.vue';
+import { register } from '@/routes';
+import { request as passwordRequest } from '@/routes/password';
+import AuthenticatedSessionController from '@/actions/App/Http/Controllers/Auth/AuthenticatedSessionController';
 
 defineOptions({ layout: AuthLayout });
 
@@ -17,7 +20,7 @@ const form = useForm({
 });
 
 function submit() {
-    form.post('/login', {
+    form.post(AuthenticatedSessionController.store().url, {
         onFinish: () => form.reset('password'),
     });
 }
@@ -53,7 +56,7 @@ function submit() {
                 <div class="flex items-center justify-between mt-2">
                     <Link
                         v-if="canResetPassword"
-                        href="/forgot-password"
+                        :href="passwordRequest().url"
                         class="link link-primary text-sm"
                     >
                         Forgot your password?
@@ -64,7 +67,7 @@ function submit() {
 
             <div class="text-center text-sm mt-4 text-base-content/70">
                 Don't have an account?
-                <Link href="/register" class="link link-primary">Sign up</Link>
+                <Link :href="register().url" class="link link-primary">Sign up</Link>
             </div>
         </div>
     </div>
