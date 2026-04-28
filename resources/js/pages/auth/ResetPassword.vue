@@ -58,7 +58,9 @@ function submit() {
                 />
 
                 <div class="flex items-center justify-end mt-2">
-                    <Button type="submit" color="primary" :loading="form.processing">Reset password</Button>
+                    <Button type="submit" color="primary" :loading="form.processing">
+                        Reset password
+                    </Button>
                 </div>
             </form>
         </div>

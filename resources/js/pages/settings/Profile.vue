@@ -59,7 +59,9 @@ function cancelDelete() {
         <p class="text-base-content/70 text-sm">Update your name and email address.</p>
     </div>
 
-    <div v-if="flash.success" class="alert alert-success text-sm">{{ flash.success }}</div>
+    <div v-if="flash.success" class="alert alert-success text-sm">
+        {{ flash.success }}
+    </div>
 
     <form class="card bg-base-100 shadow" @submit.prevent="submitProfile">
         <div class="card-body space-y-4">
@@ -79,7 +81,10 @@ function cancelDelete() {
                 required
             />
 
-            <div v-if="mustVerifyEmail && !user.email_verified_at" class="text-sm text-base-content/70">
+            <div
+                v-if="mustVerifyEmail && !user.email_verified_at"
+                class="text-sm text-base-content/70"
+            >
                 Your email address is unverified.
                 <Link
                     href="/email/verification-notification"
@@ -95,7 +100,9 @@ function cancelDelete() {
             </div>
 
             <div class="card-actions justify-end">
-                <Button type="submit" color="primary" :loading="profileForm.processing">Save</Button>
+                <Button type="submit" color="primary" :loading="profileForm.processing">
+                    Save
+                </Button>
             </div>
         </div>
     </form>
@@ -104,12 +111,12 @@ function cancelDelete() {
         <div class="card-body space-y-3">
             <h2 class="card-title text-error">Delete account</h2>
             <p class="text-base-content/70 text-sm">
-                Once your account is deleted, all of its resources and data will be
-                permanently deleted.
+                Once your account is deleted, all of its resources and data will be permanently
+                deleted.
             </p>
 
             <div v-if="!deleteOpen" class="card-actions">
-                <Button color="error" @click="deleteOpen = true">Delete account</Button>
+                <Button color="error" @click="deleteOpen = true"> Delete account </Button>
             </div>
 
             <form v-else class="space-y-4" @submit.prevent="submitDelete">
@@ -122,7 +129,7 @@ function cancelDelete() {
                     required
                 />
                 <div class="card-actions justify-end">
-                    <Button type="button" color="ghost" @click="cancelDelete">Cancel</Button>
+                    <Button type="button" color="ghost" @click="cancelDelete"> Cancel </Button>
                     <Button type="submit" color="error" :loading="deleteForm.processing">
                         Permanently delete
                     </Button>

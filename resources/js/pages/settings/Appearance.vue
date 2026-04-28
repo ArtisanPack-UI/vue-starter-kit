@@ -48,7 +48,7 @@ function pick(next: Mode) {
         <div class="card-body">
             <div class="join">
                 <button
-                    v-for="m in (['light', 'dark', 'system'] as Mode[])"
+                    v-for="m in ['light', 'dark', 'system'] as Mode[]"
                     :key="m"
                     type="button"
                     class="btn join-item capitalize"

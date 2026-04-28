@@ -60,13 +60,15 @@ function submit() {
                 />
 
                 <div class="flex items-center justify-end mt-2">
-                    <Button type="submit" color="primary" :loading="form.processing">Create account</Button>
+                    <Button type="submit" color="primary" :loading="form.processing">
+                        Create account
+                    </Button>
                 </div>
             </form>
 
             <div class="text-center text-sm mt-4 text-base-content/70">
                 Already registered?
-                <Link href="/login" class="link link-primary">Log in</Link>
+                <Link href="/login" class="link link-primary"> Log in </Link>
             </div>
         </div>
     </div>

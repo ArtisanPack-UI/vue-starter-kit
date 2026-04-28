@@ -15,20 +15,22 @@ defineProps<{
                 <h1 class="card-title text-3xl justify-center text-primary">
                     ArtisanPack UI Vue Starter Kit
                 </h1>
-                <p class="text-base-content/70">
-                    Laravel + Inertia.js + Vue 3, ready to build on.
-                </p>
+                <p class="text-base-content/70">Laravel + Inertia.js + Vue 3, ready to build on.</p>
 
                 <div class="divider" />
 
                 <div class="grid grid-cols-2 gap-4 text-sm">
                     <div>
                         <div class="text-base-content/60">Laravel</div>
-                        <div class="font-mono">{{ laravelVersion }}</div>
+                        <div class="font-mono">
+                            {{ laravelVersion }}
+                        </div>
                     </div>
                     <div>
                         <div class="text-base-content/60">PHP</div>
-                        <div class="font-mono">{{ phpVersion }}</div>
+                        <div class="font-mono">
+                            {{ phpVersion }}
+                        </div>
                     </div>
                 </div>
 

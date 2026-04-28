@@ -17,7 +17,10 @@ const currentPath = typeof window !== 'undefined' ? window.location.pathname : '
             <aside class="w-full md:w-56 shrink-0">
                 <ul class="menu bg-base-100 rounded-box shadow w-full">
                     <li v-for="tab in TABS" :key="tab.href">
-                        <Link :href="tab.href" :class="currentPath === tab.href ? 'menu-active' : ''">
+                        <Link
+                            :href="tab.href"
+                            :class="currentPath === tab.href ? 'menu-active' : ''"
+                        >
                             {{ tab.label }}
                         </Link>
                     </li>

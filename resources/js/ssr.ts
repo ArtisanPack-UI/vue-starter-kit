@@ -26,5 +26,5 @@ createServer((page) =>
                 .use(createArtisanPackUI())
                 .use(createArtisanPackUILaravel());
         },
-    })
+    }),
 );

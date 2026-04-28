@@ -31,7 +31,9 @@ function submit() {
     <div class="card bg-base-100 shadow-xl">
         <div class="card-body">
             <h1 class="card-title justify-center">Log in to your account</h1>
-            <div v-if="status" class="alert alert-info text-sm">{{ status }}</div>
+            <div v-if="status" class="alert alert-info text-sm">
+                {{ status }}
+            </div>
 
             <form class="flex flex-col gap-4 mt-4" @submit.prevent="submit">
                 <Input
@@ -61,13 +63,15 @@ function submit() {
                     >
                         Forgot your password?
                     </Link>
-                    <Button type="submit" color="primary" :loading="form.processing">Log in</Button>
+                    <Button type="submit" color="primary" :loading="form.processing">
+                        Log in
+                    </Button>
                 </div>
             </form>
 
             <div class="text-center text-sm mt-4 text-base-content/70">
                 Don't have an account?
-                <Link :href="register().url" class="link link-primary">Sign up</Link>
+                <Link :href="register().url" class="link link-primary"> Sign up </Link>
             </div>
         </div>
     </div>

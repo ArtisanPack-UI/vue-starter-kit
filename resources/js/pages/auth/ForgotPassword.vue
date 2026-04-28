@@ -25,7 +25,9 @@ function submit() {
                 Enter your email and we'll send you a link to reset it.
             </p>
 
-            <div v-if="status" class="alert alert-success text-sm mt-2">{{ status }}</div>
+            <div v-if="status" class="alert alert-success text-sm mt-2">
+                {{ status }}
+            </div>
 
             <form class="flex flex-col gap-4 mt-4" @submit.prevent="submit">
                 <Input
@@ -39,7 +41,7 @@ function submit() {
                 />
 
                 <div class="flex items-center justify-between mt-2">
-                    <Link href="/login" class="link link-primary text-sm">Back to login</Link>
+                    <Link href="/login" class="link link-primary text-sm"> Back to login </Link>
                     <Button type="submit" color="primary" :loading="form.processing">
                         Email password reset link
                     </Button>

@@ -37,7 +37,9 @@ function submit() {
         </p>
     </div>
 
-    <div v-if="flash.success" class="alert alert-success text-sm">{{ flash.success }}</div>
+    <div v-if="flash.success" class="alert alert-success text-sm">
+        {{ flash.success }}
+    </div>
 
     <form class="card bg-base-100 shadow" @submit.prevent="submit">
         <div class="card-body space-y-4">
@@ -67,7 +69,7 @@ function submit() {
             />
 
             <div class="card-actions justify-end">
-                <Button type="submit" color="primary" :loading="form.processing">Save</Button>
+                <Button type="submit" color="primary" :loading="form.processing"> Save </Button>
             </div>
         </div>
     </form>

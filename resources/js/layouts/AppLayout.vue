@@ -84,12 +84,18 @@ function logout() {
                         <div class="flex items-center gap-3">
                             <div class="avatar avatar-placeholder">
                                 <div class="bg-neutral text-neutral-content rounded-full w-8">
-                                    <span class="text-xs">{{ user.name.charAt(0).toUpperCase() }}</span>
+                                    <span class="text-xs">{{
+                                        user.name.charAt(0).toUpperCase()
+                                    }}</span>
                                 </div>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <div class="text-sm font-medium truncate">{{ user.name }}</div>
-                                <div class="text-xs text-base-content/60 truncate">{{ user.email }}</div>
+                                <div class="text-sm font-medium truncate">
+                                    {{ user.name }}
+                                </div>
+                                <div class="text-xs text-base-content/60 truncate">
+                                    {{ user.email }}
+                                </div>
                             </div>
                             <button
                                 type="button"

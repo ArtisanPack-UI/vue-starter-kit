@@ -35,7 +35,9 @@ function submit() {
                 />
 
                 <div class="flex items-center justify-end mt-2">
-                    <Button type="submit" color="primary" :loading="form.processing">Confirm</Button>
+                    <Button type="submit" color="primary" :loading="form.processing">
+                        Confirm
+                    </Button>
                 </div>
             </form>
         </div>

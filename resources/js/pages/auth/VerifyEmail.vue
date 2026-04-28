@@ -22,11 +22,14 @@ function submit() {
         <div class="card-body text-center">
             <h1 class="card-title justify-center">Verify your email</h1>
             <p class="text-sm text-base-content/70">
-                Thanks for signing up! Please verify your email address by clicking the link
-                we just emailed you. If you didn't receive it, we can send another.
+                Thanks for signing up! Please verify your email address by clicking the link we just
+                emailed you. If you didn't receive it, we can send another.
             </p>
 
-            <div v-if="status === 'verification-link-sent'" class="alert alert-success text-sm mt-2">
+            <div
+                v-if="status === 'verification-link-sent'"
+                class="alert alert-success text-sm mt-2"
+            >
                 A new verification link has been sent to your email address.
             </div>
 

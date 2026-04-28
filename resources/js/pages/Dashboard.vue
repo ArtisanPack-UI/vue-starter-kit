@@ -20,7 +20,7 @@ const user = computed(() => page.props.auth.user);
         <div>
             <h1 class="text-2xl font-semibold">Dashboard</h1>
             <p class="text-base-content/70 text-sm">
-                Welcome back<template v-if="user">, {{ user.name }}</template>.
+                Welcome back<template v-if="user"> , {{ user.name }} </template>.
             </p>
         </div>
 
